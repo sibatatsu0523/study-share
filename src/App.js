@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <h1>Study Share</h1>
+        <div className='search'><Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={[  { label: 'The Shawshank Redemption', year: 1994 },
+          { label: 'The Godfather', year: 1972 },]}
+          sx={{ width: 300 }}
+          renderInput={(params) => <TextField {...params} label="Movie"
+        />}
+    /></div>
+      </>
     </div>
   );
 }
